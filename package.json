@@ -1,6 +1,6 @@
 {
   "name": "us-address-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Parse US addresses into street, city, state, and zip components. Handles messy real-world formats including apartments, suites, buildings, multi-word cities, and partial addresses.",
   "main": "index.js",
   "module": "index.esm.js",
