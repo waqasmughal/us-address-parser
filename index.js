@@ -110,6 +110,10 @@ function parseAddress(address) {
 
   if (!addr) return { street: '', city: '', state, zip };
 
+  // Normalize mid-address commas before unit keywords or numbers
+  // e.g. "BUILDING 9, APT # 1052 PHOENIX" -> "BUILDING 9 APT # 1052 PHOENIX"
+  addr = addr.replace(/,\s*(?=(APT|UNIT|STE|SUITE|BLDG|BUILDING|LOT|RM|ROOM|APART|#\s*\d|\d))/gi, ' ').trim();
+
   let street = '';
   let city = '';
 
@@ -183,7 +187,8 @@ function parseAddress(address) {
           /^\d+[A-Z]?$/i.test(words[idx]) ||
           /^[A-Z]\d+$/i.test(words[idx]) ||
           /^[A-Z]-\d+$/i.test(words[idx]) ||
-          /^#/.test(words[idx])
+          /^#$/.test(words[idx]) ||             // standalone # before a number
+          /^#\d+/.test(words[idx])             // e.g. #40, #1052
         ) {
           idx++;
         } else {

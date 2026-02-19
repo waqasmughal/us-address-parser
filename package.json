@@ -24,11 +24,11 @@
     "geocoding",
     "postal"
   ],
-  "author": "",
+  "author": "Waqas Jamil",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/waqasmughal/us-address-parser"
+    "url": "git+https://github.com/waqasmughal/us-address-parser.git"
   },
   "files": [
     "index.js",
