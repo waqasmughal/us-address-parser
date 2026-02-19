@@ -1,0 +1,39 @@
+{
+  "name": "us-address-parser",
+  "version": "1.0.0",
+  "description": "Parse US addresses into street, city, state, and zip components. Handles messy real-world formats including apartments, suites, buildings, multi-word cities, and partial addresses.",
+  "main": "index.js",
+  "module": "index.esm.js",
+  "exports": {
+    ".": {
+      "import": "./index.esm.js",
+      "require": "./index.js"
+    }
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "address",
+    "parser",
+    "us-address",
+    "street",
+    "city",
+    "state",
+    "zip",
+    "geocoding",
+    "postal"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waqasmughal/us-address-parser"
+  },
+  "files": [
+    "index.js",
+    "index.esm.js",
+    "index.d.ts",
+    "README.md"
+  ]
+}
