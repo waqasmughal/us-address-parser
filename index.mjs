@@ -88,11 +88,11 @@ function parseAddress(address) {
   let addr = address.trim();
 
   // Strip country suffix
-  addr = addr.replace(/,?\s*(USA|United States)\s*$/i, '').trim();
+  addr = addr.replace(/,?\s*(USA?|United States)\s*$/i, '').trim();
 
   // ── Extract ZIP (5-digit at end) ──────────────────────────────────────────
   let zip = '';
-  const zipMatch = addr.match(/\b(\d{5})\s*$/);
+  const zipMatch = addr.match(/\b(\d{5})(?:-\d{4})?\s*$/);
   if (zipMatch) {
     zip = zipMatch[1];
     addr = addr.slice(0, addr.lastIndexOf(zipMatch[0])).trim().replace(/,\s*$/, '').trim();
